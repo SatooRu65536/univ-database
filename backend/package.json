@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "dev": "python manage.py runserver --settings config.settings.develop"
+  }
+}

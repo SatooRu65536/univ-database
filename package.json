@@ -1,0 +1,15 @@
+{
+  "name": "prj",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r --parallel build",
+    "preview": "pnpm -r --parallel preview",
+    "format": "pnpm -r --parallel format",
+    "lint": "pnpm -r --parallel lint",
+    "test": "pnpm -r --parallel test"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
+}
