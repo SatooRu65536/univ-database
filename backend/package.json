@@ -1,5 +1,8 @@
 {
   "scripts": {
-    "dev": "python manage.py runserver --settings config.settings.develop"
+    "dev": "python manage.py runserver --settings config.settings.develop",
+    "migration:create": "python manage.py makemigrations --settings config.settings.develop",
+    "migration:apply": "python manage.py migrate --settings config.settings.develop",
+    "migration:show": "python manage.py showmigrations --settings config.settings.develop"
   }
 }

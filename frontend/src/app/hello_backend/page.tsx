@@ -4,27 +4,28 @@ import { ofetch } from "ofetch";
 import useSWR from "swr";
 
 interface NameResponse {
-  name: string;
+  message: string;
 }
 
 async function fetcher(url: string): Promise<string> {
   try {
     const res = await ofetch<NameResponse>(url);
-    return res.name;
+    console.log(res);
+    return res.message;
   } catch (error) {
-    console.error("Error fetching name:", error);
-    throw new Error("Failed to fetch name");
+    console.error("Error fetching message:", error);
+    throw new Error("Failed to fetch message");
   }
 }
 
 export default function Page() {
-  const { data: name, isLoading, error } = useSWR('/api/hello', fetcher);
+  const { data: message, isLoading, error } = useSWR('http://localhost:8000/api/hello/backend', fetcher);
 
   return (
     <>
       {isLoading && <div>Loading...</div>}
       {error && <div>Error: {error.message}</div>}
-      {name && <h1>Hello, {name}!</h1>}
+      {message && <h1>Hello, {message}!</h1>}
     </>
   );
 }

@@ -1,6 +1,9 @@
 {
   "cSpell.words": [
+    "corsheaders",
+    "makemigrations",
     "ofetch",
-    "runserver"
+    "runserver",
+    "showmigrations"
   ]
 }
